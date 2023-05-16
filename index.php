@@ -1,4 +1,3 @@
-<?php include('galerie.php'); ?> <!-- Affiche la galerie -->
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -12,7 +11,10 @@
     <?php include('header.php'); ?> <!-- Affiche le header -->
     <main>
         <div id="liste-oeuvres">
-        <?php foreach($galerie as $oeuvre) : ?> <!-- Pour chaque oeuvre dans le tableau "gallery" : -->
+        <?php
+            include('galerie.php'); /* Affiche la galerie */
+            foreach($galerie as $oeuvre): /* Pour chaque oeuvre dans le tableau "galerie" : */
+        ?>
             <article class="oeuvre"> <!-- Créer un article -->
                 <a href="oeuvre.php?id=<?php echo $oeuvre['id']; ?>"> <!-- Créer son url -->
                     <img src="<?php echo $oeuvre['img']; ?>" alt="<?php echo $oeuvre['auteur']; ?>"> <!-- Affiche son image -->
